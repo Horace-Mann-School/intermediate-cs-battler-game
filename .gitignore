@@ -1,0 +1,56 @@
+# ==========================================
+# Java Core
+# ==========================================
+*.class
+*.log
+*.ctxt
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# ==========================================
+# Visual Studio Code Settings
+# ==========================================
+.vscode/
+.code-workspace
+
+# ==========================================
+# Build Tools (Keep what applies to your project)
+# ==========================================
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+pom.xml.parsed
+pom.xml.dependencyRemoved
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+bin/
+.gradletasknamecache
+gradle-app.setting
+
+# ==========================================
+# Embedded Java Language Server (VS Code / Eclipse JDT LS)
+# ==========================================
+.project
+.classpath
+.settings/
+.factorypath
+.metadata/
+
+# ==========================================
+# Operating System files
+# ==========================================
+.DS_Store
+Thumbs.db
