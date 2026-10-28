@@ -5,4 +5,4 @@ public class Runner {
         System.out.println(player1);
     }
     
-}// \n and \t
+}

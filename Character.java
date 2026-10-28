@@ -16,6 +16,6 @@ public class Character {
     }
 
     public String toString() {
-        return "🌙\tCharacter Name: " + name + "\t\t\t🍎\tCharacter HP: " + health + "\n🌟\tCharacter Rating: " + rating + "\t\t\t👻\tHas Fainted: " + hasFainted + "\n🔷\tShields Left: " + shieldsLeft + "\t\t\t\t🔥\tAttack Strength: " + attackStrength;
+        return "🌙\tCharacter Name: " + name + "\t\t🍎\tCharacter HP: " + health + "\n🌟\tCharacter Rating: " + rating + "\t\t\t👻\tHas Fainted: " + hasFainted + "\n🔷\tShields Left: " + shieldsLeft + "\t\t\t\t🔥\tAttack Strength: " + attackStrength;
     }
 }
