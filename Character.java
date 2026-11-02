@@ -24,21 +24,22 @@ public class Character {
 public String toString() {
     return "\n"
             + "+--------------------------------------+\n"
-            + "|           CHARACTER PROFILE!          |\n"
+            + "|          Character Profile 👤          |\n"
             + "+--------------------------------------+\n"
             + "|                                      |\n"
-            + "|  NAME:      " + name + "\n"
-            + "|  TYPE:     " + type + "\n"
-            + "|  LEVEL:     " + level + "\n"
+            + "|  📇NAME:      " + name + "\n"
+            + "|  📌TYPE:     " + type + "\n"
+            + "|  📊LEVEL:     " + level + "\n"
             + "|                                      |\n"
             + "+--------------------------------------+\n"
-            + "|            Vital Statistics             |\n"
+            + "|           Vital Statistics 📉            |\n"
             + "+--------------------------------------+\n"
-            + "|  HEALTH:    " + health + " HP\n"
-            + "|  STATUS:    " + (isAlive ? "ALIVE" : "DEFEATED") + "\n"
-            + "|  HEIGHT:    " + height + " ft\n"
-            + "|  ATTACK:    " + attack + "\n"
+            + "|  🔋HEALTH:    " + health + " HP\n"
+            + "|  ✅STATUS:    " + (isAlive ? "ALIVE" : "DEFEATED") + "\n"
+            + "|  📏HEIGHT:    " + height + " ft\n"
+            + "|  🥊ATTACK:    " + attack + "\n"
             + "+--------------------------------------+\n";
+            
     }
 
 
