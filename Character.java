@@ -1,19 +1,19 @@
 
 public class Character {
-    String name;
-    int health;
-    boolean isAlive;
-    double height;
-    int level;
-    String type;
-    int attack;
+    private String name;
+    private int health;
+    private boolean isAlive;
+    private double height;
+    private int level;
+    private String type;
+    private int attack;
 
     // Constructor
-    public Character(String name, int health, boolean isAlive,
+    public Character(String name, int health,
             double height, int level, String type, int attack) {
         this.name = name;
         this.health = health;
-        this.isAlive = isAlive;
+        this.isAlive = true;
         this.height = height;
         this.level = level;
         this.type = type;
@@ -34,10 +34,10 @@ public String toString() {
             + "+---------------------------------------+\n"
             + "|            Vital Statistics\t\t|\n"
             + "+---------------------------------------+\n"
-            + "|💕HEALTH:    " + health + "HP\t\t\t|\n"
+            + "|🔋HEALTH:    " + health + "HP\t\t\t|\n"
             + "|✅STATUS:    " + (isAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
             + "|📏HEIGHT:    " + height + "m\t\t\t|\n"
-            + "|ATTACK:    " + attack + "\t\t\t|\n"
+            + "|🔪ATTACK:    " + attack + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
 
