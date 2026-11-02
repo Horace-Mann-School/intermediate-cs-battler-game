@@ -5,7 +5,6 @@ public class Runner {
         Character player1 = new Character(
             "user",
             100,
-            true,
             5.9,
             10,
             "Defender",
