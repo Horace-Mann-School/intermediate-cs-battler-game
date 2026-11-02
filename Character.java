@@ -1,25 +1,30 @@
-
 public class Character {
-    String name;
-    int health;
-    boolean isAlive;
-    double height;
-    int level;
-    String type;
-    int attack;
+    private String name;
+    private int health;
+    private boolean isAlive;
+    private double height;
+    private int level;
+    private String type;
+    private int attack;
 
     // Constructor
-    public Character(String name, int health, boolean isAlive,
-            double height, int level, String type, int attack) {
-        this.name = name;
-        this.health = health;
-        this.isAlive = isAlive;
-        this.height = height;
-        this.level = level;
-        this.type = type;
-        this.attack = attack;
+    public Character(String name, int health, boolean isAlive, double height, int level, String type, int attack) {
+        setName(name);
+        setHealth(health);
+        setAlive(isAlive);
+        setHeight(height);
+        setLevel(level);
+        setType(type);
+        setAttack(attack);
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 public String toString() {
     return "\n"
@@ -40,8 +45,4 @@ public String toString() {
             + "|  ATTACK:    " + attack + "\n"
             + "+--------------------------------------+\n";
     }
-
-
-
 }
-
