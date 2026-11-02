@@ -1,15 +1,15 @@
 
-public class Character {
-    String name;
-    int health;
-    boolean isAlive;
-    double height;
-    int level;
-    String type;
-    int attack;
+ class Character {
+    private String name;
+    private int health;
+    private boolean isAlive;
+    private double height;
+    private int level;
+    private String type;
+    private int attack;
 
     // Constructor
-    public Character(String name, int health, boolean isAlive,
+     Character(String name, int health, boolean isAlive,
             double height, int level, String type, int attack) {
         this.name = name;
         this.health = health;
@@ -18,6 +18,9 @@ public class Character {
         this.level = level;
         this.type = type;
         this.attack = attack;
+        
+        setHeight(height);
+        setLevel(level);
     }
 
 
@@ -41,7 +44,33 @@ public String toString() {
             + "+--------------------------------------+\n";
     }
 
+public int setLevel(){
+return this.level;
 
+}
+
+public void setLevel(int level){
+if(level < 0) {
+    throw new IllegalArgumentException("Level cannot be negative: " + level);
+
+}
+this.level = level;
+
+}
+
+public double setHeight(){
+return this.height;
+
+}
+
+public void setHeight(double height){
+if(height < 0) {
+    throw new IllegalArgumentException("Level cannot be negative: " + height);
+
+}
+this.height = height;
+
+}
 
 }
 
