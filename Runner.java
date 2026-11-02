@@ -2,8 +2,8 @@
 public class Runner {
 
     public static void main(String[] args) {
-        Character player1 = new Character(
-            "user",
+        Character Metagross = new Character(
+            "Metagross",
             100,
             true,
             5.9,
@@ -12,7 +12,7 @@ public class Runner {
             20
         );
 
-        System.out.println(player1);
+        System.out.println(Metagross);
     }
 
 }

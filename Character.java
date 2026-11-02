@@ -23,22 +23,22 @@ public class Character {
 
 public String toString() {
     return "\n"
-            + "+--------------------------------------+\n"
-            + "|           CHARACTER PROFILE!          |\n"
-            + "+--------------------------------------+\n"
-            + "|                                      |\n"
-            + "|  NAME:      " + name + "\n"
-            + "|  TYPE:     " + type + "\n"
-            + "|  LEVEL:     " + level + "\n"
-            + "|                                      |\n"
-            + "+--------------------------------------+\n"
-            + "|            Vital Statistics             |\n"
-            + "+--------------------------------------+\n"
-            + "|  HEALTH:    " + health + " HP\n"
-            + "|  STATUS:    " + (isAlive ? "ALIVE" : "DEFEATED") + "\n"
-            + "|  HEIGHT:    " + height + " ft\n"
-            + "|  ATTACK:    " + attack + "\n"
-            + "+--------------------------------------+\n";
+            + "+---------------------------------------+\n"
+            + "|           CHARACTER PROFILE \t\t|\n"
+            + "+---------------------------------------+\n"
+            + "|\t\t\t\t\t|\n"
+            + "|🔷NAME:      " + name + "\t\t\t|\n" 
+            + "|🔥TYPE:      " + type + "\t\t\t|\n"           
+            + "|🌊LEVEL:     " + level + "\t\t\t|\n"
+            + "|\t\t\t\t\t|\n"
+            + "+---------------------------------------+\n"
+            + "|            Vital Statistics\t\t|\n"
+            + "+---------------------------------------+\n"
+            + "|💕HEALTH:    " + health + "HP\t\t\t|\n"
+            + "|✅STATUS:    " + (isAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
+            + "|📏HEIGHT:    " + height + "m\t\t\t|\n"
+            + "|ATTACK:    " + attack + "\t\t\t|\n"
+            + "+---------------------------------------+\n";
     }
 
 
