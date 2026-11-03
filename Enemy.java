@@ -1,5 +1,5 @@
 public class Enemy {
-     private String ename;
+    private String ename;
     private int ehealth;
     private boolean eisAlive;
     private double eheight;
@@ -8,15 +8,88 @@ public class Enemy {
     private int eattack;
     private boolean eisLegendary;
  // Constructor
-    public Enemy(String name, int health, boolean isAlive,
+    public Enemy(String name, int health,
             double height, int level, String type, int attack, boolean isLegendary) {
         this.ename = name;
         this.ehealth = health;
         this.eheight = height;
+        this.eisAlive = true;
         this.elevel = level;
         this.etype = type;
         this.eattack = attack;
         this.eisLegendary = isLegendary;
+    }
+
+      //mutators and accessors
+    public int getAttack() {
+        return eattack;
+    }
+    public int getHealth() {
+        return ehealth;
+    }
+    public double getHeight() {
+        return eheight;
+    }
+    public int getLevel() {
+        return elevel;
+    }
+    public String getName() {
+        return ename;
+    }
+    public String getType() {
+        return etype;
+    }
+    public boolean getisAlive() {
+        return eisAlive;
+    }
+    public boolean getisLegendary() {
+        return eisLegendary;
+    }
+
+    private void validateNonNegative(int num){
+        if(num<0) {
+            throw new IllegalArgumentException("number cannot be negative : " + num);
+        }
+    }
+
+    private void validateNotNull(String x){
+        if(x == " " || x == null || x == "") {
+            throw new IllegalArgumentException("string cannot be null : " + x);
+        }
+    }
+
+    public void setAttack(int attack) {
+        validateNonNegative(attack);
+        this.eattack = attack;
+    }
+    public void setHealth(int health) {
+        if(health <= 0){
+            this.ehealth = 0;
+            eisAlive = false;
+        }
+        this.ehealth = health;
+    }
+    public void setHeight(double height) {
+        if(height < 0) {
+            throw new IllegalArgumentException("number cannot be negative : " + height);
+        }
+        this.eheight = height;
+    }
+    public void setLevel(int level) {
+        validateNonNegative(level);
+        this.elevel = level;
+    }
+    public void setName(String name) {
+        validateNotNull(name);
+        this.ename = name;
+    }
+    public void setType(String type) {
+        validateNotNull(type);
+        this.etype = type;
+    }
+
+    public void setLegendary(boolean x){
+        this.eisLegendary = x;
     }
 
 
