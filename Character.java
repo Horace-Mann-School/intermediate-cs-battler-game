@@ -86,6 +86,16 @@ public class Character {
         this.type = type;
     }
 
+    public void attackEnemy(Enemy x){
+        int attack = getAttack();
+        int charhealth = x.getHealth();
+        charhealth -= attack;
+        if(charhealth < 0){
+            charhealth = 0;
+        }
+        x.setHealth(charhealth);
+    }
+
 public String toString() {
     return "\n"
             + "+---------------------------------------+\n"

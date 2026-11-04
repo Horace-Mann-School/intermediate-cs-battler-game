@@ -91,7 +91,15 @@ public class Enemy {
     public void setLegendary(boolean x){
         this.eisLegendary = x;
     }
-
+  public void attackCharacter(Character y){
+        int attack = this.getAttack();
+        int charhealth = y.getHealth(); 
+        charhealth -= attack;
+        if(charhealth < 0){
+            charhealth = 0;
+        }
+        y.setHealth(charhealth);
+        }
 
 public String toString() {
     return "\n"
@@ -114,8 +122,6 @@ public String toString() {
             + "|🔪ATTACK:    " + eattack + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
-
-
 
 }
 

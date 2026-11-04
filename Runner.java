@@ -1,7 +1,7 @@
 
 public class Runner {
      public static void main(String[] args) {
-        Character Metagross = new Character(
+        Character metagross = new Character(
 "Metagross",
             100,
             5.9,
@@ -9,7 +9,7 @@ public class Runner {
             "Defender",
             20
         );
-        Enemy Articuno = new Enemy(
+        Enemy articuno = new Enemy(
             "Articuno",
             100,
             23.5,
@@ -19,35 +19,12 @@ public class Runner {
             true
         );
 
-        attackCharacter(Articuno, Metagross);
-        attackEnemy(Articuno, Metagross);
+        articuno.attackCharacter(metagross);
+        metagross.attackEnemy(articuno);
 
-        System.out.println(Metagross);
-        System.out.println(Articuno);
-
-    }
-
-    //methods to lower hp, from attacks
-
-    public static void attackCharacter(Enemy x, Character y){
-        int attack = x.getAttack();
-        int charhealth = y.getHealth(); 
-        charhealth -= attack;
-        if(charhealth < 0){
-            charhealth = 0;
-        }
-        y.setHealth(charhealth);
-        }
-
-    public static void attackEnemy(Enemy x, Character y){
-        int attack = y.getAttack();
-        int charhealth = x.getHealth();
-        charhealth -= attack;
-        if(charhealth < 0){
-            charhealth = 0;
-        }
-        x.setHealth(charhealth);
-    }
+        System.out.println(metagross);
+        System.out.println(articuno);
 
     }
 
+    }
