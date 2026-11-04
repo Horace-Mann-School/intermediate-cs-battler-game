@@ -1,5 +1,6 @@
-
  class Character {
+    
+ 
     private String name;
     private int health;
     private boolean isAlive;
@@ -20,7 +21,8 @@
         this.attack = attack;
         
         setHeight(height);
-        setLevel(level);
+        setAttack(attack);
+        setHealth(health);
     }
 
 
@@ -44,17 +46,32 @@ public String toString() {
             + "+--------------------------------------+\n";
     }
 
-public int setLevel(){
-return this.level;
+public int getAttack(){
+return this.attack;
 
 }
 
-public void setLevel(int level){
-if(level < 0) {
-    throw new IllegalArgumentException("Level cannot be negative: " + level);
+public int getHealth(){
+return this.health;
 
 }
-this.level = level;
+
+public void setHealth(int health){
+if(health < 0) {
+    throw new IllegalArgumentException("health cannot be negative: " + health);
+
+}
+    
+this.health = health;
+
+}
+
+public void setAttack(int attack){
+if(attack < 0) {
+    throw new IllegalArgumentException("attack cannot be negative: " + attack);
+
+}
+this.attack = attack;
 
 }
 
@@ -73,4 +90,6 @@ this.height = height;
 }
 
 }
+
+
 
