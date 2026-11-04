@@ -15,4 +15,7 @@ public class Runner {
         System.out.println(player1);
     }
 
+        Enemy enemy1 = new Enemy("bigBadGuy", 500, true, 60, 99, "Fire", 50);
+
+
 }
