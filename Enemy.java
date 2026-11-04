@@ -11,13 +11,13 @@ public class Enemy {
         //Constructor
     public Enemy(String enemName, int enemHealth, boolean enemIsAlive,
         double enemHeight, int enemLevel, String enemType, int enemAttack){
-            this.enemName = enemName;
-            this.enemHealth = enemHealth;
-            this.enemIsAlive = enemIsAlive;
-            this.enemHeight = enemHeight;
-            this.enemLevel = enemLevel;
-            this.enemType = enemType;
-            this.enemAttack = enemAttack;
+            setEnemName(enemName);
+            setEnemHealth(enemHealth);
+            setEnemIsAlive(enemIsAlive);
+            setEnemHeight(enemHeight);
+            setEnemLevel(enemLevel);
+            setEnemType(enemType);
+            setEnemAttack(enemAttack);
         
         }
 
@@ -68,6 +68,15 @@ public class Enemy {
         if(_enemLevel>=0){
         this.enemLevel = _enemLevel;
         }
+    }
+
+
+    //getter and setter for enemIsAlive
+    public boolean getEnemIsAlive(){
+        return this.enemIsAlive;
+    }
+    public void setEnemIsAlive(boolean _enemIsAlive){
+        this.enemIsAlive = _enemIsAlive;
     }
 
 

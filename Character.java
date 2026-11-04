@@ -11,13 +11,13 @@ public class Character {
     // Constructor
     public Character(String name, int health, boolean isAlive,
             double height, int level, String type, int attack) {
-        this.name = name;
-        this.health = health;
-        this.isAlive = isAlive;
-        this.height = height;
-        this.level = level;
-        this.type = type;
-        this.attack = attack;
+        setName(name);
+        setHealth(health);
+        setIsAlive(isAlive);
+        setHeight(height);
+        setLevel(level);
+        setType(type);
+        setAttack(attack);
     }
 
 
@@ -58,6 +58,15 @@ public String toString() {
     public void setType(String _type){
         this.type = _type;
     }
+
+    //getter and setter for isAlive
+    public boolean getIsAlive(){
+        return this.isAlive;
+    }
+    public void setIsAlive(boolean _isAlive){
+        this.isAlive = _isAlive;
+    }
+
     
 
     //getter and setter for level
