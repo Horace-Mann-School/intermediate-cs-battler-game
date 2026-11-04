@@ -57,10 +57,7 @@ return this.health;
 }
 
 public void setHealth(int health){
-if(health < 0) {
-    throw new IllegalArgumentException("health cannot be negative: " + health);
 
-}
     
 this.health = health;
 
