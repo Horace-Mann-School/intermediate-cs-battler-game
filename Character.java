@@ -69,15 +69,15 @@ public class Character {
     public String toString() {
         return "\n"
                 + "+--------------------------------------+\n"
-                + "|          Character Profile 👤          |\n"
+                + "|          Character Profile 👤         \n"
                 + "+--------------------------------------+\n"
-                + "|                                      |\n"
+                + "|                                      \n"
                 + "|  📇NAME:      " + name + "\n"
                 + "|  📌TYPE:     " + type + "\n"
                 + "|  📊LEVEL:     " + level + "\n"
-                + "|                                      |\n"
+                + "|                                      \n"
                 + "+--------------------------------------+\n"
-                + "|           Vital Statistics 📉            |\n"
+                + "|           Vital Statistics 📉          \n"
                 + "+--------------------------------------+\n"
                 + "|  🔋HEALTH:    " + health + " HP\n"
                 + "|  ✅STATUS:    " + (isAlive ? "ALIVE" : "DEFEATED") + "\n"
@@ -85,4 +85,17 @@ public class Character {
                 + "|  🥊ATTACK:    " + attack + "\n"
                 + "+--------------------------------------+\n";
     }
+
+
+// character attack method
+public void characterAttack(Enemy enemy) {
+    if (health > 0 && enemy.getHealth() > 0) {
+        enemy.setHealth(enemy.getHealth() - attack);
+    }
+
+    if (enemy.getHealth() == 0) {
+        enemy.setDead(true);
+    }
+}
+    
 }

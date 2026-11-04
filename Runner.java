@@ -2,6 +2,7 @@
 public class Runner {
 
     public static void main(String[] args) {
+
         Character player1 = new Character(
             "Player",
             100,
@@ -22,31 +23,66 @@ public class Runner {
             15
         );
 
+        System.out.println("BEFORE BATTLE:");
         System.out.println(player1);
         System.out.println(enemy1);
 
-        // Character attacks Enemy
+        // character attacks Enemy
         if (player1.getHealth() > 0 && enemy1.getHealth() > 0) {
-            enemy1.setHealth(Math.max(0, enemy1.getHealth() - player1.getAttack()));
+            attackEnemy(player1, enemy1);
+            System.out.println("Character attacks Enemy!");
         }
 
-        if (enemy1.getHealth() == 0) {
-            enemy1.setDead(true);
-        }
-
-        // Enemy attacks Character
+        // enemy attacks Character
         if (enemy1.getHealth() > 0 && player1.getHealth() > 0) {
-            player1.setHealth(Math.max(0, player1.getHealth() - enemy1.getAttack()));
+            attackCharacter(enemy1, player1);
+            System.out.println("Enemy attacks Character!");
         }
 
-        if (player1.getHealth() == 0) {
-            player1.setAlive(false);
-        }
-
-        // Display updated profiles
-        System.out.println("\nAFTER THE BATTLE:");
+        System.out.println("\nAFTER BATTLE:");
         System.out.println(player1);
         System.out.println(enemy1);
     }
 
+    // enemy losing health from character attack
+    public static void attackEnemy(Character player, Enemy enemy) {
+
+        int damage = player.getAttack();
+        int remainingHealth = enemy.getHealth();
+
+        remainingHealth = remainingHealth - damage;
+
+        if (remainingHealth < 0) {
+            remainingHealth = 0;
+        }
+
+        enemy.setHealth(remainingHealth);
+
+        if (remainingHealth == 0) {
+            enemy.setDead(true);
+        }
+
+        System.out.println("Enemy lost " + damage + " HP");
+    }
+
+    // character losing health from enemy attck
+    public static void attackCharacter(Enemy enemy, Character player) {
+
+        int damage = enemy.getAttack();
+        int remainingHealth = player.getHealth();
+
+        remainingHealth = remainingHealth - damage;
+
+        if (remainingHealth < 0) {
+            remainingHealth = 0;
+        }
+
+        player.setHealth(remainingHealth);
+
+        if (remainingHealth == 0) {
+            player.setAlive(false);
+        }
+
+        System.out.println("Character lost " + damage + " HP");
+    }
 }

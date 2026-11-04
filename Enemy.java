@@ -89,15 +89,15 @@ public class Enemy {
     public String toString() {
         return "\n"
                 + "+--------------------------------------+\n"
-                + "|           Enemy Profile 👹          |\n"
+                + "|           Enemy Profile 👹          \n"
                 + "+--------------------------------------+\n"
-                + "|                                      |\n"
+                + "|                                      \n"
                 + "|  📇NAME:      " + name + "\n"
                 + "|  📌TYPE:     " + type + "\n"
                 + "|  📊LEVEL:     " + level + "\n"
-                + "|                                      |\n"
+                + "|                                      \n"
                 + "+--------------------------------------+\n"
-                + "|           Vital Statistics 📈            |\n"
+                + "|           Vital Statistics 📈            \n"
                 + "+--------------------------------------+\n"
                 + "|  🔋HEALTH:    " + health + " HP\n"
                 + "|  ✅STATUS:    " + (isDead ? "DEFEATED" : "ALIVE") + "\n"
@@ -105,4 +105,16 @@ public class Enemy {
                 + "|  🥊ATTACK:    " + attack + "\n"
                 + "+--------------------------------------+\n";
     }
+
+// enemy attack method
+public void enemyAttack(Character player) {
+    if (health > 0 && player.getHealth() > 0) {
+        player.setHealth(player.getHealth() - attack);
+    }
+
+    if (player.getHealth() == 0) {
+        player.setAlive(false);
+    }
+}
+
 }
