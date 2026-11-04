@@ -1,10 +1,10 @@
 public class Utility {
     //This class is just to store general utility methods 
 
-    //Takes a number and validates between a range of int min and int max with the errorMessage of choice
-    public static void validateNum(int n, int min, int max, String errorMessage) {
-	    if (n > max && n < min) {
-            throw new IllegalArgumentException("number is " + errorMessage + ": "+ n);
+    //Takes a number and validates for negative with the errorMessage of choice
+    public static void validatePosNum(int n, String errorMessage) {
+	    if (n < 0) {
+            throw new IllegalArgumentException(errorMessage + " cannot be negative: "+ n);
         }
 
     }
