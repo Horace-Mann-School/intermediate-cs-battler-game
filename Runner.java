@@ -10,9 +10,32 @@ public class Runner {
             10,
             "Defender",
             20
-        );
 
-        System.out.println(player1);
+    );
+            
+Enemy player2 = new Enemy(
+            "enemy",
+            80,
+            true,
+            5.9,
+            10,
+            "Defender",
+            20
+
+    );
+
+            if( player1.getHealth() > 0 && player2.getHealth()>0){
+                player2.setHealth(player2.getHealth() - player1.getAttack());
+            }
+
+            if(player1.getHealth()>0 && player2.getHealth()>0){
+                player1.setHealth(player1.getHealth() - player2.getAttack());
+
+            }
+            System.out.println(player1);
+            System.out.println(player2);
+
     }
+
 
 }
