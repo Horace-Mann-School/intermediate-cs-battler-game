@@ -1,18 +1,30 @@
 
 public class Runner {
-
-    public static void main(String[] args) {
-        Character player1 = new Character(
-            "user",
+     public static void main(String[] args) {
+        Character metagross = new Character(
+"Metagross",
             100,
-            true,
             5.9,
             10,
             "Defender",
             20
         );
+        Enemy articuno = new Enemy(
+            "Articuno",
+            100,
+            23.5,
+            20,
+            "Attacker",
+            18,
+            true
+        );
 
-        System.out.println(player1);
+        articuno.attackCharacter(metagross);
+        metagross.attackEnemy(articuno);
+
+        System.out.println(metagross);
+        System.out.println(articuno);
+
     }
 
-}
+    }
