@@ -31,7 +31,7 @@ Player.java should be revised to support encapsulation. Your Player class should
 - A Runner.java file where students will call the attack accessor method for the Character and use that returned value to lower the HP of the Enemy. Then, the Enemy should do the same to the Character. 
 - Both should only allow the attack to occur if the HP is zero
 
-### Reflection Questions: 
+### Reflection Questions:
 Answer these in a separate Google Doc attached to the assignment.
 - Why is it useful to encapsulate classes by setting their fields to private?
 - Why do you think we have the battle occurring in Runner, and not in Character or Enemy?
@@ -50,7 +50,7 @@ Students will create a Battle class that runs an automated battle between the Ch
 - Reflection question answers submitted in a Google Document to Classroom
 
 A successful submission of these assignments is necessary for a full grade; failure to submit all requirements on time will result in a late-grade penalty.
-### Specifications: 
+### Specifications:
 The Battle.java class should have a method, battle(), with two arguments, a Character and an Enemy 
 `public void battle(Character c, Enemy e) {...}`
 The battle() method should be called in the Runner.java file

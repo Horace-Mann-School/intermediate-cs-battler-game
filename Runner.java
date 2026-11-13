@@ -1,4 +1,3 @@
-
 public class Runner {
     public static void main(String[] args) {
         Character metagross = new Character(
@@ -15,7 +14,7 @@ public class Runner {
             23.5,
             20,
             "Attacker",
-            18,git 
+            18,
             true
         );
 
@@ -27,4 +26,4 @@ public class Runner {
 
     }
 
-    }
+}
