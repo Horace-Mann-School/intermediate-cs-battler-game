@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Runner {
      public static void main(String[] args) {
@@ -7,7 +8,8 @@ public class Runner {
             5.9,
             10,
             "Defender",
-            20
+            20,
+            8
         );
         Enemy articuno = new Enemy(
             "Articuno",
@@ -16,15 +18,39 @@ public class Runner {
             20,
             "Attacker",
             18,
-            true
+            true,
+            10
         );
 
-        articuno.attackCharacter(metagross);
-        metagross.attackEnemy(articuno);
+       
+        attackCharacter(articuno, metagross);
+        attackEnemy(articuno, metagross);
 
         System.out.println(metagross);
         System.out.println(articuno);
 
+    }
+//methods to lower hp, from attacks
+
+            
+        public static void attackCharacter(Enemy x, Character y){
+        int attack = x.getAttack();
+        int charhealth = y.getHealth(); 
+        charhealth -= attack;
+        if(charhealth < 0){
+            charhealth = 0;
+        }
+        y.setHealth(charhealth);
+        }
+
+    public static void attackEnemy(Enemy x, Character y){
+        int attack = y.getAttack();
+        int charhealth = x.getHealth();
+        charhealth -= attack;
+        if(charhealth < 0){
+            charhealth = 0;
+        }
+        x.setHealth(charhealth);
     }
 
     }

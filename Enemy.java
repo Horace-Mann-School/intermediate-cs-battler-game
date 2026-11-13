@@ -7,9 +7,10 @@ public class Enemy {
     private String etype;
     private int eattack;
     private boolean eisLegendary;
+    private int espeed;
  // Constructor
     public Enemy(String name, int health,
-            double height, int level, String type, int attack, boolean isLegendary) {
+            double height, int level, String type, int attack, boolean isLegendary, int speed) {
         this.ename = name;
         this.ehealth = health;
         this.eheight = height;
@@ -18,6 +19,7 @@ public class Enemy {
         this.etype = type;
         this.eattack = attack;
         this.eisLegendary = isLegendary;
+        this.espeed = speed;
     }
 
       //mutators and accessors
@@ -44,6 +46,9 @@ public class Enemy {
     }
     public boolean getisLegendary() {
         return eisLegendary;
+    }
+    public int getSpeed(){
+        return speed;
     }
 
     private void validateNonNegative(int num){
@@ -91,15 +96,21 @@ public class Enemy {
     public void setLegendary(boolean x){
         this.eisLegendary = x;
     }
-  public void attackCharacter(Character y){
-        int attack = this.getAttack();
-        int charhealth = y.getHealth(); 
-        charhealth -= attack;
-        if(charhealth < 0){
-            charhealth = 0;
-        }
-        y.setHealth(charhealth);
-        }
+
+    public void setSpeed(int x){
+        validateNonNegative(speed);
+        this.speed = x;
+    }
+
+//   public void attackCharacter(Character y){
+//         int attack = this.getAttack();
+//         int charhealth = y.getHealth(); 
+//         charhealth -= attack;
+//         if(charhealth < 0){
+//             charhealth = 0;
+//         }
+//         y.setHealth(charhealth);
+//         }
 
 public String toString() {
     return "\n"
