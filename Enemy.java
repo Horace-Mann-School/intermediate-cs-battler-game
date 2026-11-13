@@ -8,8 +8,7 @@ public class Enemy {
     private int eattack;
     private boolean eisLegendary;
  // Constructor
-    public Enemy(String name, int health,
-            double height, int level, String type, int attack, boolean isLegendary) {
+    public Enemy(String name, int health, double height, int level, String type, int attack, boolean isLegendary) {
         this.ename = name;
         this.ehealth = health;
         this.eheight = height;

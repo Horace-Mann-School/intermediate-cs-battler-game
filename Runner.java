@@ -1,4 +1,3 @@
-
 public class Runner {
      public static void main(String[] args) {
         Character metagross = new Character(
@@ -7,7 +6,7 @@ public class Runner {
             5.9,
             10,
             "Defender",
-            20
+            (int)(Math.random() * 50) + 1
         );
         Enemy articuno = new Enemy(
             "Articuno",
@@ -15,7 +14,7 @@ public class Runner {
             23.5,
             20,
             "Attacker",
-            18,
+            (int)(Math.random() * 50) + 1,
             true
         );
 
@@ -24,7 +23,5 @@ public class Runner {
 
         System.out.println(metagross);
         System.out.println(articuno);
-
     }
-
-    }
+}

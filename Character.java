@@ -1,6 +1,4 @@
-
 public class Character {
-   
     private String name;
     private int health;
     private boolean isAlive;
@@ -10,8 +8,7 @@ public class Character {
     private int attack;
 
     // Constructor
-    public Character(String name, int health,
-            double height, int level, String type, int attack) {
+    public Character(String name, int health, double height, int level, String type, int attack) {
         setName(name);
         setHealth(health);
         this.isAlive = true;
