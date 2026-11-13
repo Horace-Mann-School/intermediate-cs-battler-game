@@ -8,6 +8,8 @@ public class Character {
     private int level;
     private String type;
     private int attack;
+    private int speed;
+
 
     // Constructor
     public Character(String name, int health,
