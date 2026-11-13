@@ -89,7 +89,7 @@ public class Character {
     public void attackEnemy(Enemy x){
         int attack = getAttack();
         int charhealth = x.getHealth();
-        charhealth -= attack;
+        charhealth -= attack * (((int)(Math.random() * 15.1) + 85.0)/100.0);
         if(charhealth < 0){
             charhealth = 0;
         }
