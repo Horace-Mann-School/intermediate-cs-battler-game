@@ -7,7 +7,8 @@ public class Runner {
             5.9,
             10,
             "Defender",
-            20
+            20,
+            65
         );
         Enemy articuno = new Enemy(
             "Articuno",
@@ -16,7 +17,8 @@ public class Runner {
             20,
             "Attacker",
             18,
-            true
+            true,
+            70
         );
 
         articuno.attackCharacter(metagross);
