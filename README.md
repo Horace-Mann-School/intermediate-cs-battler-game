@@ -36,3 +36,31 @@ Answer these in a separate Google Doc attached to the assignment.
 - Why is it useful to encapsulate classes by setting their fields to private?
 - Why do you think we have the battle occurring in Runner, and not in Character or Enemy?
 - For our game, right now we have a Character and Enemy just hitting each other with their attack, and lowering their HP. Give me at least 2 ways we could add in functionality to make this more dynamic and interesting.
+
+## Part 3 - Creating the Battle Loop
+### Objective
+Students will create a Battle class that runs an automated battle between the Character and the Enemy. The battle should end when a character or enemy's HP has fallen to zero. The battle should allow for input management so that a player must type something and hit Enter before the battle continues.
+### You will turn in:
+A revised Character, Enemy, and Runner class class in the shared repository
+A Battle class that creates a Battle object, with references to both Pokemon
+A method in Battle called battle() that begins the fight between two Pokemon (this is where your loop logic will live)
+A photo of your updated UML diagrams that includes the new Battle class, with arrows to represent the compositional relationship between the Character, Enemy, Battle, and Runner classes
+A pull request of your code that has a commit history on Github
+Reflection question answers submitted in a Google Document to Classroom
+
+A successful submission of these assignments is necessary for a full grade; failure to submit all requirements on time will result in a late-grade penalty.
+### Specifications: 
+The Battle.java class should have a method, battle(), with two arguments, a Character and an Enemy 
+public void battle(Character c, Enemy e) {...}
+The battle() method should be called in the Runner.java file
+The battle() method should:
+Use conditional logic to make the combatant with the highest speed act first
+Loop until one combatant's HP has fallen to zero
+Using Scanner, wait for the user to type in any String then hit Enter before their attack happens (right now this string will not be used, but this sets us up for later)
+Call the attack() method for each combatant automatically
+The Character and Enemy class should be revised to include:
+A speed stat
+
+Reflection Questions: 
+Reflection questions will be posted next week.
+
