@@ -95,7 +95,6 @@ public class Enemy {
   public void attackCharacter(Character y){
         int attack = this.getAttack();
         int charhealth = y.getHealth(); 
-        charhealth -= attack;
         if(charhealth < 0){
             charhealth = 0;
         }

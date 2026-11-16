@@ -1,18 +1,19 @@
 import java.util.Scanner;
 
 public class Battle {
+private Scanner kb; 
 
-private int numberOfTurns;
-
-public void battle(Character c, Enemy e){
-
-System.out.println("Battle:");
-
-while(getHealth()> 0 && getAttack() > 0){
-
-
-
+public Battle(){
+    kb = new Scanner(System.in); 
 }
+public void scannerTest() {
+    System.out.print("Enter an option: ");
+    String option = kb.nextLine();
+    System.out.print("Option entered was " + option);
+}
+
+
+public void battlePokemon(Character c, Enemy e){
 
 }
 
