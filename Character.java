@@ -6,9 +6,10 @@ public class Character {
     private int level;
     private String type;
     private int attack;
+    private int speed;
 
     // Constructor
-    public Character(String name, int health, double height, int level, String type, int attack) {
+    public Character(String name, int health, double height, int level, String type, int attack, int speed) {
         setName(name);
         setHealth(health);
         this.isAlive = true;
@@ -16,9 +17,13 @@ public class Character {
         setLevel(level);
         setType(type);
         setAttack(attack);
+        setSpeed(speed);
     }
 
     //mutators and accessors
+    public int getSpeed() {
+        return speed;
+    }
     public int getAttack() {
         return attack;
     }
@@ -81,6 +86,9 @@ public class Character {
     public void setType(String type) {
         validateNotNull(type);
         this.type = type;
+    }
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
     public void attackEnemy(Enemy x){
