@@ -7,9 +7,11 @@ public class Enemy {
     private String etype;
     private int eattack;
     private boolean eisLegendary;
+    private int espeed;
+
  // Constructor
     public Enemy(String name, int health,
-            double height, int level, String type, int attack, boolean isLegendary) {
+            double height, int level, String type, int attack, boolean isLegendary, int speed) {
         this.ename = name;
         this.ehealth = health;
         this.eheight = height;
@@ -18,6 +20,7 @@ public class Enemy {
         this.etype = type;
         this.eattack = attack;
         this.eisLegendary = isLegendary;
+        this.espeed = speed;
     }
 
       //mutators and accessors
@@ -44,6 +47,9 @@ public class Enemy {
     }
     public boolean getisLegendary() {
         return eisLegendary;
+    } 
+    public int getSpeed() {
+        return espeed;
     }
 
     private void validateNonNegative(int num){
@@ -62,13 +68,11 @@ public class Enemy {
         validateNonNegative(attack);
         this.eattack = attack;
     }
-    public void setHealth(int health) {
-        if(health <= 0){
-            this.ehealth = 0;
-            eisAlive = false;
-        }
-        this.ehealth = health;
-    }
+public void setHealth(int health) {
+    validateNonNegative(health);
+    this.ehealth = health;
+    eisAlive = health > 0;
+}
     public void setHeight(double height) {
         if(height < 0) {
             throw new IllegalArgumentException("number cannot be negative : " + height);
@@ -91,7 +95,12 @@ public class Enemy {
     public void setLegendary(boolean x){
         this.eisLegendary = x;
     }
-  public void attackCharacter(Character y){
+public void setSpeed(int speed) {
+    validateNonNegative(speed);
+    this.espeed = speed;
+}
+    
+public void attackCharacter(Character y){
         int attack = this.getAttack();
         int charhealth = y.getHealth(); 
         charhealth -= attack;
@@ -101,6 +110,8 @@ public class Enemy {
         y.setHealth(charhealth);
         }
 
+
+        
 public String toString() {
     return "\n"
             + "+---------------------------------------+\n"
@@ -120,6 +131,7 @@ public String toString() {
             + "|✅STATUS:    " + (eisAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
             + "|📏HEIGHT:    " + eheight + "m\t\t\t|\n"
             + "|🔪ATTACK:    " + eattack + "\t\t\t|\n"
+            + "|🏃SPEED:     " + espeed + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
 

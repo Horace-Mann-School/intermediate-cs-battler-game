@@ -1,37 +1,58 @@
+
 import java.util.Scanner;
+
 public class Battle {
     private Character player;
     private Enemy enemy;
     private int turnCount;
 
-    public Battle(Character player, Enemy enemy) {
-        this.player = player;
-        this.enemy = enemy;
+    public Battle() {
         this.turnCount = 1;
     }
 
-public void startBattle() {
+    public void battle(Character c, Enemy e) {
+        this.player = c;
+        this.enemy = e;
+
+        Scanner input = new Scanner(System.in);
+
         System.out.println("=== BATTLE START: " + player.getName() + " vs. " + enemy.getName() + " ===");
 
         while (player.getHealth() > 0 && enemy.getHealth() > 0) {
             System.out.println("\n--- Turn " + turnCount + " ---");
 
-            player.attackEnemy(enemy);
-            if (enemy.getHealth() <= 0) {
-                System.out.println(enemy.getName() + " has been defeated!");
-                System.out.println("Winner: " + player.getName());
-                break;
-            }
+            if (player.getSpeed() >= enemy.getSpeed()) {
+                System.out.println("Type anything and press Enter for " + player.getName() + "'s attack.");
+                input.nextLine();
+                player.attackEnemy(enemy);
 
-            enemy.attackCharacter(player);
-            if (player.getHealth() <= 0) {
-                System.out.println(player.getName() + " has been defeated!");
-                System.out.println("Winner: " + enemy.getName());
-                break;
+                if (enemy.getHealth() > 0) {
+                    System.out.println("Type anything and press Enter for " + enemy.getName() + "'s attack.");
+                    input.nextLine();
+                    enemy.attackCharacter(player);
+                }
+            } else {
+                System.out.println("Type aything" + enemy.getName() + "'s attack.");
+                input.nextLine();
+                enemy.attackCharacter(player);
+
+                if (player.getHealth() > 0) {
+                    System.out.println("Type anything" + player.getName() + "'s attack.");
+                    input.nextLine();
+                    player.attackEnemy(enemy);
+                }
+            input.close();
+
             }
 
             printStatus();
             turnCount++;
+        }
+
+        if (player.getHealth() <= 0) {
+            System.out.println("Winner: " + enemy.getName());
+        } else {
+            System.out.println("Winner: " + player.getName());
         }
 
         System.out.println("=== BATTLE OVER ===");
@@ -42,7 +63,6 @@ public void startBattle() {
         System.out.println(enemy);
     }
 
-    // getters & Setters
     public Character getPlayer() {
         return player;
     }
@@ -55,5 +75,4 @@ public void startBattle() {
         return turnCount;
     }
 }
-
 
