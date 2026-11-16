@@ -51,20 +51,8 @@ public class Enemy {
         return eisLegendary;
     }
 
-    private void validateNonNegative(int num){
-        if(num<0) {
-            throw new IllegalArgumentException("number cannot be negative : " + num);
-        }
-    }
-
-    private void validateNotNull(String x){
-        if(x == " " || x == null || x == "") {
-            throw new IllegalArgumentException("string cannot be null : " + x);
-        }
-    }
-
     public void setAttack(int attack) {
-        validateNonNegative(attack);
+        Utility.validateNonNegative(attack);
         this.eattack = attack;
     }
     public void setHealth(int health) {
@@ -81,19 +69,19 @@ public class Enemy {
         this.eheight = height;
     }
     public void setLevel(int level) {
-        validateNonNegative(level);
+        Utility.validateNonNegative(level);
         this.elevel = level;
     }
     public void setSpeed(int speed) {
-        validateNonNegative(speed);
+        Utility.validateNonNegative(speed);
         this.espeed = speed;
     }
     public void setName(String name) {
-        validateNotNull(name);
+        Utility.validateNotNull(name);
         this.ename = name;
     }
     public void setType(String type) {
-        validateNotNull(type);
+        Utility.validateNotNull(type);
         this.etype = type;
     }
 
@@ -103,7 +91,7 @@ public class Enemy {
   public void attackCharacter(Character y){
         int attack = this.getAttack();
         int charhealth = y.getHealth(); 
-        charhealth -= attack * (((int)(Math.random() * 15.1) + 85.0)/100.0);
+        charhealth -= attack * (((int)((Math.random() * 15.0) + 86.0))/100.0);
         if(charhealth < 0){
             charhealth = 0;
         }

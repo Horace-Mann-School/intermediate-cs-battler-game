@@ -48,21 +48,9 @@ public class Character {
     public boolean getisAlive(){
         return isAlive;
     }
-
-    private void validateNonNegative(int num){
-        if(num<0) {
-            throw new IllegalArgumentException("number cannot be negative : " + num);
-        }
-    }
-
-    private void validateNotNull(String x){
-        if(x == " " || x == null || x == "") {
-            throw new IllegalArgumentException("string cannot be null : " + x);
-        }
-    }
-
+    
     public void setAttack(int attack) {
-        validateNonNegative(attack);
+        Utility.validateNonNegative(attack);
         this.attack = attack;
     }
     public void setHealth(int health) {
@@ -79,26 +67,26 @@ public class Character {
         this.height = height;
     }
     public void setLevel(int level) {
-        validateNonNegative(level);
+        Utility.validateNonNegative(level);
         this.level = level;
     }
     public void setSpeed(int speed) {
-        validateNonNegative(speed);
+        Utility.validateNonNegative(speed);
         this.speed = speed;
     }
     public void setName(String name) {
-        validateNotNull(name);
+        Utility.validateNotNull(name);
         this.name = name;
     }
     public void setType(String type) {
-        validateNotNull(type);
+        Utility.validateNotNull(type);
         this.type = type;
     }
 
     public void attackEnemy(Enemy x){
         int attack = getAttack();
         int charhealth = x.getHealth();
-        charhealth -= attack * (((int)(Math.random() * 15.1) + 85.0)/100.0);
+        charhealth -= attack * (((int)((Math.random() * 15.0) + 86.0))/100.0);
         if(charhealth < 0){
             charhealth = 0;
         }
