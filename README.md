@@ -43,8 +43,8 @@ Students will create a Battle class that runs an automated battle between the Ch
 ### You will turn in:
 - A flowchart or pseudocoded diagram (with precision) of what your game is doing step-by-step in the battle() method
 - A revised Character, Enemy, and Runner class class in the shared repository
-- A Battle class that creates a Battle object, with references to both Pokemon
-- A method in Battle called battle() that begins the fight between two Pokemon (this is where your loop logic will live)
+- A Battle class that creates a Battle object, with references to both combatants
+- A method in Battle called battle() that begins the fight between two combatants (this is where your loop logic will live)
 - A photo of your updated UML diagrams that includes the new Battle class, with arrows to represent the compositional relationship between the Character, Enemy, Battle, and Runner classes
 - A pull request of your code that has a commit history on Github
 - Reflection question answers submitted in a Google Document to Classroom
