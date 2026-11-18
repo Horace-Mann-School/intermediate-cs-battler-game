@@ -48,7 +48,7 @@ public class Enemy {
         return eisLegendary;
     }
     public int getSpeed(){
-        return speed;
+        return espeed;
     }
 
     private void validateNonNegative(int num){
@@ -98,8 +98,8 @@ public class Enemy {
     }
 
     public void setSpeed(int x){
-        validateNonNegative(speed);
-        this.speed = x;
+        validateNonNegative(espeed);
+        this.espeed = x;
     }
 
 //   public void attackCharacter(Character y){

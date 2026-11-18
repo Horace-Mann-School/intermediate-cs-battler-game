@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Runner {
      public static void main(String[] args) {
@@ -22,10 +21,9 @@ public class Runner {
             10
         );
 
-       
-        attackCharacter(articuno, metagross);
-        attackEnemy(articuno, metagross);
-
+        Battle fight = new Battle();
+        fight.battlePokemon(articuno, metagross);
+        
         System.out.println(metagross);
         System.out.println(articuno);
 
