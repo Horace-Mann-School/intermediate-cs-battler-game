@@ -88,7 +88,7 @@ public class Enemy {
     public void setLegendary(boolean x){
         this.eisLegendary = x;
     }
-  public void attackCharacter(Character y){
+    public void attackCharacter(Character y){
         int attack = this.getAttack();
         int charhealth = y.getHealth(); 
         charhealth -= attack * (((int)((Math.random() * 15.0) + 86.0))/100.0);
@@ -96,7 +96,7 @@ public class Enemy {
             charhealth = 0;
         }
         y.setHealth(charhealth);
-        }
+    }
 
 public String toString() {
     return "\n"

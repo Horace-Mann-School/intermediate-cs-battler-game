@@ -21,12 +21,8 @@ public class Runner {
             70
         );
 
-        articuno.attackCharacter(metagross);
-        metagross.attackEnemy(articuno);
-
-        System.out.println(metagross);
-        System.out.println(articuno);
-
+        Battle firstBattle = new Battle();
+        firstBattle.startBattle(metagross, articuno);
     }
 
     }

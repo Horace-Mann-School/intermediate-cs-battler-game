@@ -7,21 +7,41 @@ public class Battle {
 
     public Battle() {
         kb = new Scanner(System.in);
+        numberOfTurns = 1;
+        currentTurn = 2;
     }
     
     public void startBattle(Character c, Enemy e) {
 
         while(c.getisAlive() && e.getisAlive()) {
+            System.out.print(c.toString());
+            System.out.print(e.toString());
             System.out.print("Enter an option: ");
             int option = kb.nextInt();
-            System.out.print("Option entered was " + option);
+            System.out.println("Option entered was " + option);
             //decide speed
             turnOrder(c,e);
-            while(getCurrentTurn() == getNumberOfTurns()) {
-
+            while(getCurrentTurn()/2 == getNumberOfTurns()) {
+                if (playerTurn) {
+                    c.attackEnemy(e);
+                } else {
+                    e.attackCharacter(c);
+                }
+                playerTurn = !playerTurn;
+                currentTurn += 1;
+                System.out.println(currentTurn);
             }
+            numberOfTurns += 1;
             
         }
+        System.out.println("Battle Over!");
+        if (e.getHealth() == 0) {
+            System.out.println("Winner is " + c.getName());
+        }
+        if (c.getHealth() == 0) {
+            System.out.println("Winner is " + e.getName());
+        }
+
 
     }
 
