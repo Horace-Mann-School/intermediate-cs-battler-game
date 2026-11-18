@@ -24,8 +24,8 @@ public class Runner {
         Battle fight = new Battle();
         fight.battlePokemon(articuno, metagross);
         
-        System.out.println(metagross);
-        System.out.println(articuno);
+        // System.out.println(metagross);
+        // System.out.println(articuno);
 
     }
 //methods to lower hp, from attacks
