@@ -58,10 +58,10 @@ The battle() method should:
 - Use conditional logic to make the combatant with the highest speed act first
 - Loop until one combatant's HP has fallen to zero
 - Using Scanner, wait for the user to type in any String then hit Enter before their attack happens (right now this string will not be used, but this sets us up for later)
-- all the attack() method for each combatant automatically
-- 
+- Call the attack() method for each combatant automatically
+  
 The Character and Enemy class should be revised to include:
-A speed stat
+- A speed stat
 
 Reflection Questions: 
 1. What should be the elements of Attacks that we are going to incorporate?
