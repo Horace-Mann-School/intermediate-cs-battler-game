@@ -118,8 +118,8 @@ public String toString() {
             + "|           ENEMY PROFILE \t\t|\n"
             + "+---------------------------------------+\n"
             + "|\t\t\t\t\t|\n"
-            + "|🔷NAME:      " + ename + "\t\t\t|\n" 
-            + "|🔥TYPE:      " + etype + "\t\t\t|\n"           
+            + "|🔷NAME:      " + ename + "\t\t\t|\n"
+            + "|🔥TYPE:      " + etype + "\t\t\t|\n"
             + "|🌊LEVEL:     " + elevel + "\t\t\t|\n"
             + "|💎RARITY:    " + (eisLegendary ? "LEGENDARY\t\t\t|" : "NORMAL\t\t\t|") + "\n"
 
