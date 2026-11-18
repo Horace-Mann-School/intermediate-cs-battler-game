@@ -6,8 +6,9 @@ public class Battle {
         kb = new Scanner(System.in);
     }
 
+    //battle method
     public void battle(Character c, Enemy e) {
-        int turn = 1;
+        int turn = 1;   //when turn equals 1 player goes first and when 2 enemy goes first
 
         int c_speed = c.getSpeed();
         int e_speed = e.getSpeed();
@@ -21,6 +22,7 @@ public class Battle {
         System.out.println(c_health);
         System.out.println(e_health);
 
+        //battle loop
         while (c_health > 0 && e_health > 0) {
             c_health = c.getHealth();
             e_health = e.getHealth();
@@ -37,7 +39,7 @@ public class Battle {
                 //player's attack
                 System.out.print("Enter an attack option: ");
                 int attack = kb.nextInt();
-                e.setHealth(e_health - (int)((Math.random()+0.5)*c_attack));
+                e.setHealth(e_health - (int)((Math.random()+0.5)*c_attack));    //these 4 randoms just randomize the attacks dealt
 
                 //enemy's attack
                 c.setHealth(c_health - (int)((Math.random()+0.5)*e_attack));
