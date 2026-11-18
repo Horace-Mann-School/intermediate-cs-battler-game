@@ -43,8 +43,8 @@ Students will create a Battle class that runs an automated battle between the Ch
 ### You will turn in:
 - A flowchart or pseudocoded diagram (with precision) of what your game is doing step-by-step in the battle() method
 - A revised Character, Enemy, and Runner class class in the shared repository
-- A Battle class that creates a Battle object, with references to both Pokemon
-- A method in Battle called battle() that begins the fight between two Pokemon (this is where your loop logic will live)
+- A Battle class that creates a Battle object, with references to both combatants
+- A method in Battle called battle() that begins the fight between two combatants (this is where your loop logic will live)
 - A photo of your updated UML diagrams that includes the new Battle class, with arrows to represent the compositional relationship between the Character, Enemy, Battle, and Runner classes
 - A pull request of your code that has a commit history on Github
 - Reflection question answers submitted in a Google Document to Classroom
@@ -58,10 +58,10 @@ The battle() method should:
 - Use conditional logic to make the combatant with the highest speed act first
 - Loop until one combatant's HP has fallen to zero
 - Using Scanner, wait for the user to type in any String then hit Enter before their attack happens (right now this string will not be used, but this sets us up for later)
-- all the attack() method for each combatant automatically
-- 
+- Call the attack() method for each combatant automatically
+  
 The Character and Enemy class should be revised to include:
-A speed stat
+- A speed stat
 
 Reflection Questions: 
 1. What should be the elements of Attacks that we are going to incorporate?
