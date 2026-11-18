@@ -10,7 +10,10 @@ b.scannerTest();
             5.9,
             10,
             "Defender",
-            20
+            20,
+            80
+        
+            
         );
         Enemy articuno = new Enemy(
             "Articuno",
@@ -19,7 +22,8 @@ b.scannerTest();
             20,
             "Attacker",
             18,
-            true
+            true,
+            20
         );
 
         articuno.attackCharacter(metagross);
@@ -27,6 +31,7 @@ b.scannerTest();
 
         System.out.println(metagross);
         System.out.println(articuno);
+
 
     }
 
