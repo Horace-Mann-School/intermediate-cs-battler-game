@@ -21,7 +21,7 @@ public class Battle {
             System.out.println("Option entered was " + option);
             //decide speed
             turnOrder(c,e);
-            while(getCurrentTurn()/2 == getNumberOfTurns()) {
+            while(getCurrentTurn()/2 == getNumberOfTurns() && c.getisAlive() && e.getisAlive()) {
                 if (playerTurn) {
                     c.attackEnemy(e);
                 } else {
@@ -37,8 +37,7 @@ public class Battle {
         System.out.println("Battle Over!");
         if (e.getHealth() == 0) {
             System.out.println("Winner is " + c.getName());
-        }
-        if (c.getHealth() == 0) {
+        } else if (c.getHealth() == 0) {
             System.out.println("Winner is " + e.getName());
         }
 
