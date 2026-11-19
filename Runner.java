@@ -32,6 +32,7 @@ b.scannerTest();
         System.out.println(metagross);
         System.out.println(articuno);
 
+        b.battle(metagross, articuno);
 
     }
 

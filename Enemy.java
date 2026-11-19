@@ -78,8 +78,12 @@ public class Enemy {
         if(health <= 0){
             this.ehealth = 0;
             eisAlive = false;
+        } else {
+
+            this.ehealth = health;
+            eisAlive = true;
         }
-        this.ehealth = health;
+    
     }
     public void setHeight(double height) {
         if(height < 0) {
