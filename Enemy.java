@@ -132,6 +132,7 @@ public String toString() {
             + "|✅STATUS:    " + (eisAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
             + "|📏HEIGHT:    " + eheight + "m\t\t\t|\n"
             + "|🔪ATTACK:    " + eattack + "\t\t\t|\n"
+            + "|💨SPEED:     " + espeed  + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
 

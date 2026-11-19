@@ -16,17 +16,24 @@ public void scannerTest() {
     System.out.print("Option entered was " + option);
 }
 
-this.enemy = enemy;
-this.character = character;
-
 public void battlePokemon(Character c, Enemy e){
 
+    character = c;
+    enemy = e;
 
-while (character.getHealth() > 0 && enemy.getHealth() >0){
-    c.attackEnemy(e);
 
+while (character.getHealth() > 0 && enemy.getHealth() > 0){
+
+    if (character.getSpeed() >= enemy.getSpeed()){
+
+System.out.println(character.getName() + "Attacks First🗡️");
+
+
+    }
     System.out.println(c.getName() + "Attack");
 }
 }
-
+    
 }
+    }
+

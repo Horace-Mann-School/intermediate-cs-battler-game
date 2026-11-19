@@ -69,7 +69,7 @@ public class Character {
     }
 
         public void setSpeed(int speed) {
-        validateNonNegative(attack);
+        validateNonNegative(speed);
         this.speed = speed;
     }
     public void setHealth(int health) {
@@ -78,6 +78,7 @@ public class Character {
             isAlive = false;
         } else{
         this.health = health;
+        isAlive = true;
         }
     }
     public void setHeight(double height) {
@@ -126,6 +127,7 @@ public String toString() {
             + "|✅STATUS:    " + (isAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
             + "|📏HEIGHT:    " + height + "m\t\t\t|\n"
             + "|🔪ATTACK:    " + attack + "\t\t\t|\n"
+            + "|💨SPEED:     " + speed  + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
 
