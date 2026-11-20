@@ -22,18 +22,18 @@ public class Battle {
     System.out.println("|\t\t\t\t\t\t|\n|💎Character Health: " + character.getHealth() + "\t\t\t|👻Enemy Health: " + enemy.getHealth() + "\n🟩🟩🟩🟩🟩\t\t\t\t\t🟩🟩🟩🟩🟩");
     while(character.getHealth() >= 0 && enemy.getHealth() >=0){
     if(cspeed > espeed){
-        Runner.attackEnemy(enemy, character);
-        Runner.attackCharacter(enemy, character);
+        character.attackEnemy(enemy, character);
+        enemy.attackCharacter(enemy, character);
         }else if(espeed > cspeed){
-            Runner.attackCharacter(enemy, character);
-            Runner.attackEnemy(enemy, character);
+            enemy.attackCharacter(enemy, character);
+            character.attackEnemy(enemy, character);
         }else{ //Math.random refers to random in math class
             if(Math.random() > 0.5){
-                Runner.attackEnemy(enemy, character);
-                Runner.attackCharacter(enemy, character);
+                character.attackEnemy(enemy, character);
+                enemy.attackCharacter(enemy, character);
             }else{
-                Runner.attackCharacter(enemy, character);
-                Runner.attackEnemy(enemy, character);
+                enemy.attackCharacter(enemy, character);
+                character.attackEnemy(enemy, character);
             }
         }
         int i = 0;
@@ -80,4 +80,3 @@ public class Battle {
     }
 
 }
-   

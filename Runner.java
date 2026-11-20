@@ -28,25 +28,5 @@ public class Runner {
         // System.out.println(articuno);
 
     }
-//methods to lower hp, from attacks
-
-            
-        public static void attackCharacter(Enemy x, Character y){
-        int charhealth = y.getHealth(); 
-        charhealth -= y.getAttack()-4+(int)(Math.random()*8);
-        if(charhealth < 0){
-            charhealth = 0;
-        }
-        y.setHealth(charhealth);
-        }
-
-    public static void attackEnemy(Enemy x, Character y){
-        int charhealth = x.getHealth();
-        charhealth -= x.getAttack()-4+(int)(Math.random()*8);
-        if(charhealth < 0){
-            charhealth = 0;
-        }
-        x.setHealth(charhealth);
-    }
 
     }
