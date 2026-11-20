@@ -9,18 +9,19 @@ public class Character {
     private String type;
     private int attack;
     private int speed;
+    private boolean isLegendary;
 
     // Constructor
     public Character(String name, int health,
-            double height, int level, String type, int attack, int speed) {
+            double height, int level, String type, int attack, int speed, boolean isLegendary) {
         setName(name);
         setHealth(health);
-        this.isAlive = true;
         setHeight(height);
         setLevel(level);
         setType(type);
         setAttack(attack);
         setSpeed(speed);
+        this.isLegendary = true;
     }
 
     //mutators and accessors
@@ -47,8 +48,10 @@ public class Character {
     }
     public int getSpeed() {
     return speed;
+    }
+    public boolean getisLegendary() {
+    return isLegendary;
 }
-
     private void validateNonNegative(int num){
         if(num<0) {
             throw new IllegalArgumentException("number cannot be negative : " + num);
@@ -66,12 +69,10 @@ public class Character {
         this.attack = attack;
     }
     public void setHealth(int health) {
-        if(health <= 0){
-            this.health = 0;
-            isAlive = false;
-        }
-        this.health = health;
-    }
+    validateNonNegative(health);
+    this.health = health;
+    isAlive = health > 0;
+}
     public void setHeight(double height) {
         if(height < 0) {
             throw new IllegalArgumentException("number cannot be negative : " + height);
@@ -104,6 +105,13 @@ public class Character {
     validateNonNegative(speed);
     this.speed = speed;
 }
+public void setisLegendary(boolean legendary) {
+    if (speed > 50) {
+        isLegendary = true;
+    } else {
+        isLegendary = false;
+    }
+}
 
 public String toString() {
     return "\n"
@@ -111,18 +119,19 @@ public String toString() {
             + "|           CHARACTER PROFILE \t\t|\n"
             + "+---------------------------------------+\n"
             + "|\t\t\t\t\t|\n"
-            + "|🔷NAME:      " + name + "\t\t\t|\n" 
-            + "|🔥TYPE:      " + type + "\t\t\t|\n"           
-            + "|🌊LEVEL:     " + level + "\t\t\t|\n"
+            + "|🔷Name:      " + name + "\t\t\t|\n"
+            + "|🔥Type:      " + type + "\t\t\t|\n"
+            + "|📊Level:     " + level + "\t\t\t|\n"
+            + "|💎Rarity:    " + (isLegendary ? "LEGENDARY\t\t\t|" : "NORMAL\t\t\t|") + "\n"
             + "|\t\t\t\t\t|\n"
             + "+---------------------------------------+\n"
             + "|            Vital Statistics\t\t|\n"
             + "+---------------------------------------+\n"
-            + "|🔋HEALTH:    " + health + "HP\t\t\t|\n"
-            + "|✅STATUS:    " + (isAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
-            + "|📏HEIGHT:    " + height + "m\t\t\t|\n"
-            + "|🔪ATTACK:    " + attack + "\t\t\t|\n"
-            + "|🏃SPEED:     " + speed + "\t\t\t|\n"
+            + "|🔋Health:    " + health + "HP\t\t\t|\n"
+            + "|✅Status:    " + (isAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
+            + "|📏Height:    " + height + "m\t\t\t|\n"
+            + "|🥊Attack:    " + attack + "\t\t\t|\n"
+            + "|🏃Speed:     " + speed + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
 

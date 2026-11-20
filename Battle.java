@@ -27,40 +27,41 @@ public class Battle {
             System.out.println("\n- Turn " + turnCount + " -");
 
             if (player.getSpeed() >= enemy.getSpeed()) {
-                System.out.print("Type anything and press Enter for " + player.getName() + "'s attack: ");
+                System.out.print("Type anything and press Enter for " + player.getName() + "'s attack 🥊: ");
                 kb.nextLine();
                 player.attackEnemy(enemy);
 
                 if (enemy.getHealth() > 0) {
-                    System.out.print("Type anything and press Enter for " + enemy.getName() + "'s attack: ");
+                    System.out.print("Type anything and press Enter for " + enemy.getName() + "'s attack 🥊: ");
                     kb.nextLine();
                     enemy.attackCharacter(player);
                 }
             } else {
-                System.out.print("Type anything and press Enter for " + enemy.getName() + "'s attack: ");
+                System.out.print("Type anything and press Enter for " + enemy.getName() + "'s attack 🥊: ");
                 kb.nextLine();
                 enemy.attackCharacter(player);
 
                 if (player.getHealth() > 0) {
-                    System.out.print("Type anything and press Enter for " + player.getName() + "'s attack: ");
+                    System.out.print("Type anything and press Enter for " + player.getName() + "'s attack 🥊: ");
                     kb.nextLine();
                     player.attackEnemy(enemy);
                 }
             }
 
+            status();
             printStatus();
             turnCount++;
         }
 
         System.out.println("\nBattle Over!");
         if (player.getHealth() > 0) {
-            System.out.println(player.getName() + " wins!~ 🎉");
+            System.out.println(player.getName() + " wins!~ 🎉⭐️🎉⭐️");
         } else {
-            System.out.println(enemy.getName() + " wins! 😈");
+            System.out.println(enemy.getName() + " wins! 😈👹😈👹");
         }
     }
 
-    public void printStatus() {
+    public void status() {
         System.out.println(player);
         System.out.println(enemy);
     }
@@ -77,7 +78,7 @@ public class Battle {
         return turnCount;
     }
 
-        public void status() {
+        public void printStatus() {
         if (player.getHealth() >= 30) {
             System.out.println("🔋 " + player.getName() + " Health: " + player.getHealth());
         } else {
