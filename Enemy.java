@@ -133,9 +133,9 @@ public String toString() {
             + "|🔪ATTACK:    " + eattack + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
- public void attackCharacter(Enemy x, Character y){
+ public void attackCharacter(Character y){
         int charhealth = y.getHealth(); 
-        charhealth -= y.getAttack()-4+(int)(Math.random()*8);
+        charhealth -= getAttack()-4+(int)(Math.random()*8);
         if(charhealth < 0){
             charhealth = 0;
         }

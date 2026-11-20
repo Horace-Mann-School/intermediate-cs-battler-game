@@ -126,13 +126,13 @@ public String toString() {
             + "+---------------------------------------+\n";
     }
 
-     public void attackEnemy(Enemy x, Character y){
-        int charhealth = x.getHealth();
-        charhealth -= x.getAttack()-4+(int)(Math.random()*8);
-        if(charhealth < 0){
-            charhealth = 0;
+     public void attackEnemy(Enemy x){
+        int enemhealth = x.getHealth();
+        enemhealth -= getAttack()-4+(int)(Math.random()*8);
+        if(enemhealth < 0){
+            enemhealth = 0;
         }
-        x.setHealth(charhealth);
+        x.setHealth(enemhealth);
     }
 
 }
