@@ -16,17 +16,11 @@ public class Battle {
         int c_health = c.getHealth();
         int e_health = e.getHealth();
 
-        int c_attack = c.getAttack();
-        int e_attack = e.getAttack();
-
         System.out.println(c_health);
         System.out.println(e_health);
 
         //battle loop
         while (c_health > 0 && e_health > 0) {
-            c_health = c.getHealth();
-            e_health = e.getHealth();
-
             if (c_speed > e_speed) {
                 turn = 1;
             } else if (e_speed > c_speed) {
@@ -36,28 +30,21 @@ public class Battle {
             }
 
             if (turn == 1) {
-                //player's attack
                 System.out.print("Enter an attack option: ");
-                int attack = kb.nextInt();
-                e.setHealth(e_health - (int)((Math.random()+0.5)*c_attack));    //these 4 randoms just randomize the attacks dealt
+                String attack = kb.nextLine();
+                c.attackEnemy(e);
 
-                //enemy's attack
-                c.setHealth(c_health - (int)((Math.random()+0.5)*e_attack));
+                e.attackCharacter(c);
             } else {
-                //enemy's attack
-                c.setHealth(c_health - (int)((Math.random()+0.5)*e_attack));
+                e.attackCharacter(c);
 
-                //player's attack
                 System.out.print("Enter an attack option: ");
-                int attack = kb.nextInt();
-                e.setHealth(e_health - (int)((Math.random()+0.5)*c_attack));
+                String attack = kb.nextLine();
+                c.attackEnemy(e);
             }
-            if (c_health < 0) {
-                c.setHealth(0);
-            }
-            if (e_health < 0) {
-                e.setHealth(0);
-            }
+            c_health = c.getHealth();
+            e_health = e.getHealth();
+            
             System.out.println(c_health);
             System.out.println(e_health);
         }

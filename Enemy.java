@@ -104,7 +104,7 @@ public class Enemy {
   public void attackCharacter(Character y){
         int attack = this.getAttack();
         int charhealth = y.getHealth(); 
-        charhealth -= attack;
+        charhealth -= (int)(attack*(Math.random()+0.5));
         if(charhealth < 0){
             charhealth = 0;
         }
