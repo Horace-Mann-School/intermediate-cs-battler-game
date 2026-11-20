@@ -8,9 +8,9 @@ public class Battle {
     }
 
     public void scannerTest() {
-        System.out.print("Enter an option: ");
+        System.out.print("Proceed battle? ");
         String option = kb.nextLine();
-        //System.out.print("Option entered was " + option);
+        System.out.print("Answer entered was: " + option);
     }
 
 
@@ -19,7 +19,7 @@ public class Battle {
     int espeed = enemy.getSpeed();
     String[] ecbar = {"🟩🟩🟩🟩🟩", "🟩🟩🟩🟩", "🟨🟨🟨", "🟥🟥", "🟥"};
     System.out.println("|Go, " + character.getName() + "! \t\t\t\t|Go, " + enemy.getName() + "!");
-    System.out.println("|\t\t\t\t\t\t|\n|💎Character Health: " + character.getHealth() + "\t\t\t|👻Enemy Health: " + enemy.getHealth());
+    System.out.println("|\t\t\t\t\t\t|\n|💎Character Health: " + character.getHealth() + "\t\t\t|👻Enemy Health: " + enemy.getHealth() + "\n🟩🟩🟩🟩🟩\t\t\t\t\t🟩🟩🟩🟩🟩");
     while(character.getHealth() >= 0 && enemy.getHealth() >=0){
     if(cspeed > espeed){
         Runner.attackEnemy(enemy, character);
@@ -61,19 +61,23 @@ public class Battle {
     } else if(enemy.getHealth() >= 0){
         j = 4;
     }
-    
+        if(ecbar[i]=="🟩🟩🟩🟩🟩" || ecbar[i] == "🟩🟩🟩🟩"){
         System.out.println("\n|💎Character Health: " + character.getHealth() + "\t\t\t\t|👻Enemy Health: " + enemy.getHealth() + "\n" + ecbar[i] +"\t\t\t\t\t" + ecbar[j]);
+        System.out.println("STATUS: " + (character.getisAlive() ? "✅ALIVE\t\t\t\t\t|" : "💀DEFEATED\t\t\t|") + "STATUS: " + (enemy.getisAlive() ? "✅ALIVE\t\t\t\t\t" : "💀DEFEATED\t\t\t"));
+        }else{
+        System.out.println("\n|💎Character Health: " + character.getHealth() + "\t\t\t\t|👻Enemy Health: " + enemy.getHealth() + "\n" + ecbar[i] +"\t\t\t\t\t\t" + ecbar[j]);
+        System.out.println("STATUS: " + (character.getisAlive() ? "✅ALIVE\t\t\t\t\t|" : "💀DEFEATED\t\t\t\t|") + "STATUS: " + (enemy.getisAlive() ? "✅ALIVE\t\t\t\t\t" : "💀DEFEATED\t\t\t"));
+        }
         scannerTest();
         if(character.getHealth() <= 0){
-            System.out.println("YOU LOSE!! 👿 \n🌟🌟🌟🌟🌟🌟🌟🌟THE WINNER IS: " + enemy.getName()+ "!🌟🌟🌟🌟🌟🌟🌟🌟");
+            System.out.println("\nYOU LOSE!! 👿 \n🌟🌟🌟🌟🌟🌟🌟🌟THE WINNER IS: " + enemy.getName()+ "!🌟🌟🌟🌟🌟🌟🌟🌟");
                 return;
         }else if(enemy.getHealth() <=0){
-            System.out.println("YOU WIN!! 🏆\n🌟🌟🌟🌟🌟🌟🌟🌟THE WINNER IS: " + character.getName() + "!🌟🌟🌟🌟🌟🌟🌟🌟");
+            System.out.println("\nYOU WIN!! 🏆\n🌟🌟🌟🌟🌟🌟🌟🌟THE WINNER IS: " + character.getName() + "!🌟🌟🌟🌟🌟🌟🌟🌟");
             return;
         }
     }
     }
 
 }
-
    

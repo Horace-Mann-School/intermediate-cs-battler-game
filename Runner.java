@@ -32,9 +32,8 @@ public class Runner {
 
             
         public static void attackCharacter(Enemy x, Character y){
-        int attack = x.getAttack();
         int charhealth = y.getHealth(); 
-        charhealth -= attack;
+        charhealth -= y.getAttack()-4+(int)(Math.random()*8);
         if(charhealth < 0){
             charhealth = 0;
         }
@@ -42,9 +41,8 @@ public class Runner {
         }
 
     public static void attackEnemy(Enemy x, Character y){
-        int attack = y.getAttack();
         int charhealth = x.getHealth();
-        charhealth -= attack;
+        charhealth -= x.getAttack()-4+(int)(Math.random()*8);
         if(charhealth < 0){
             charhealth = 0;
         }
