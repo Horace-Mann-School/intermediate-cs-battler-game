@@ -17,7 +17,7 @@ public class Battle {
             System.out.print(c.toString());
             System.out.print(e.toString());
             System.out.print("Enter an option: ");
-            int option = kb.nextInt();
+            String option = kb.nextLine();
             System.out.println("Option entered was " + option);
             //decide speed
             turnOrder(c,e);
