@@ -127,7 +127,6 @@ public String toString() {
             + "+---------------------------------------+\n"
             + "|            Vital Statistics\t\t|\n"
             + "+---------------------------------------+\n"
-            + "|🔋Health:    " + health + "HP\t\t\t|\n"
             + "|✅Status:    " + (isAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
             + "|📏Height:    " + height + "m\t\t\t|\n"
             + "|🥊Attack:    " + attack + "\t\t\t|\n"

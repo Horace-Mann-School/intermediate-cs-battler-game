@@ -130,7 +130,6 @@ public String toString() {
             + "+---------------------------------------+\n"
             + "|            Vital Statistics\t\t|\n"
             + "+---------------------------------------+\n"
-            + "|🔋Health:    " + ehealth + "HP\t\t\t|\n"
             + "|✅Status:    " + (eisAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
             + "|📏Height:    " + eheight + "m\t\t\t|\n"
             + "|🔪Attack:    " + eattack + "\t\t\t|\n"
