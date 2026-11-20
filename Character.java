@@ -1,6 +1,4 @@
-
 public class Character {
-   
     private String name;
     private int health;
     private boolean isAlive;
@@ -8,10 +6,10 @@ public class Character {
     private int level;
     private String type;
     private int attack;
+    private int speed;
 
     // Constructor
-    public Character(String name, int health,
-            double height, int level, String type, int attack) {
+    public Character(String name, int health, double height, int level, String type, int attack, int speed) {
         setName(name);
         setHealth(health);
         this.isAlive = true;
@@ -19,9 +17,13 @@ public class Character {
         setLevel(level);
         setType(type);
         setAttack(attack);
+        setSpeed(speed);
     }
 
     //mutators and accessors
+    public int getSpeed() {
+        return speed;
+    }
     public int getAttack() {
         return attack;
     }
@@ -85,11 +87,14 @@ public class Character {
         validateNotNull(type);
         this.type = type;
     }
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
 
     public void attackEnemy(Enemy x){
         int attack = getAttack();
         int charhealth = x.getHealth();
-        charhealth -= attack;
+        charhealth -= (int)(attack*(Math.random()+0.5));
         if(charhealth < 0){
             charhealth = 0;
         }
