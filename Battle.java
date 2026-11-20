@@ -7,6 +7,7 @@ private Enemy enemy;
 
 
 
+
 public Battle(){
     kb = new Scanner(System.in); 
 }

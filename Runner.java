@@ -1,10 +1,6 @@
 
 public class Runner {
-     public static void main(String[] args) {
-Battle b = new Battle();
-b.scannerTest();
-
-        Character metagross = new Character(
+    static Character metagross = new Character(
 "Metagross",
             100,
             5.9,
@@ -15,7 +11,8 @@ b.scannerTest();
         
             
         );
-        Enemy articuno = new Enemy(
+
+        static Enemy articuno = new Enemy(
             "Articuno",
             100,
             23.5,
@@ -25,6 +22,12 @@ b.scannerTest();
             true,
             20
         );
+     public static void main(String[] args) {
+Battle b = new Battle();
+b.scannerTest();
+
+        
+        
 
         articuno.attackCharacter(metagross);
         metagross.attackEnemy(articuno);
