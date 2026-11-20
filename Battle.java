@@ -48,6 +48,7 @@ public class Battle {
         if (c.getSpeed() > e.getSpeed()) {
                 setPlayerTurn(true);
             } else if (c.getSpeed() > e.getSpeed()) {
+                //Math.random to generate a number from 0-1, making the turn order a fifty-fifty chance for either to move first
                 if (Math.random() >= 0.5) {
                     setPlayerTurn(true);
                 } else {
