@@ -7,7 +7,7 @@ public class Runner {
             10,
             "Defender",
             20,
-            80
+            (int)(Math.random() * 100)//randomly generating an integer from 0-99
         
             
         );
@@ -20,7 +20,7 @@ public class Runner {
             "Attacker",
             18,
             true,
-            20
+            (int)(Math.random() * 100)//randomly generating an integer from 0-99
         );
      public static void main(String[] args) {
 Battle b = new Battle();
