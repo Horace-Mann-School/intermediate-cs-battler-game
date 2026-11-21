@@ -7,7 +7,8 @@ public class Runner {
             5.9,
             10,
             "Defender",
-            20
+            20,
+            8
         );
         Enemy articuno = new Enemy(
             "Articuno",
@@ -16,14 +17,15 @@ public class Runner {
             20,
             "Attacker",
             18,
-            true
+            true,
+            10
         );
 
-        articuno.attackCharacter(metagross);
-        metagross.attackEnemy(articuno);
-
-        System.out.println(metagross);
-        System.out.println(articuno);
+        Battle fight = new Battle();
+        fight.battlePokemon(articuno, metagross);
+        
+        // System.out.println(metagross);
+        // System.out.println(articuno);
 
     }
 
