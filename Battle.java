@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+/*This battle class manages the battle between the character and enemy
+and determines the winner
+*/
 public class Battle {
 private Scanner kb; 
 private Character character;
@@ -7,16 +9,20 @@ private Enemy enemy;
 
 
 
-
+//scanner object for user input 
 public Battle(){
     kb = new Scanner(System.in); 
 }
+//asks user to enter and optino using scanner
 public void scannerTest() {
     System.out.print("Enter an option: ");
     String option = kb.nextLine();
     System.out.print("Option entered was " + option);
 }
 
+/*runs pokemon battle with comparing speeds to
+determines who goes first then announces winner
+*/
 public void battle(Character c, Enemy e){
 
     character = c;
