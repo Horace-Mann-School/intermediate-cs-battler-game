@@ -1,29 +1,40 @@
 
 public class Runner {
-     public static void main(String[] args) {
-        Character metagross = new Character(
+    static Character metagross = new Character(
 "Metagross",
             100,
             5.9,
             10,
             "Defender",
-            20
+            20,
+            (int)(Math.random() * 100)//randomly generating an integer from 0-99
+            
         );
-        Enemy articuno = new Enemy(
+
+        static Enemy articuno = new Enemy(
             "Articuno",
             100,
             23.5,
             20,
             "Attacker",
             18,
-            true
+            true,
+            (int)(Math.random() * 100)//randomly generating an integer from 0-99
         );
+     public static void main(String[] args) {
+Battle b = new Battle();
+b.scannerTest();
+
+        
+        
 
         articuno.attackCharacter(metagross);
         metagross.attackEnemy(articuno);
 
         System.out.println(metagross);
         System.out.println(articuno);
+
+        b.battle(metagross, articuno);
 
     }
 

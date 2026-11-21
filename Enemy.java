@@ -7,9 +7,11 @@ public class Enemy {
     private String etype;
     private int eattack;
     private boolean eisLegendary;
+    private int espeed;
+    
  // Constructor
     public Enemy(String name, int health,
-            double height, int level, String type, int attack, boolean isLegendary) {
+            double height, int level, String type, int attack, boolean isLegendary, int speed) {
         this.ename = name;
         this.ehealth = health;
         this.eheight = height;
@@ -18,6 +20,7 @@ public class Enemy {
         this.etype = type;
         this.eattack = attack;
         this.eisLegendary = isLegendary;
+        this.espeed = speed;
     }
 
       //mutators and accessors
@@ -30,6 +33,11 @@ public class Enemy {
     public double getHeight() {
         return eheight;
     }
+    
+      public int getSpeed() {
+        return espeed;
+    }
+
     public int getLevel() {
         return elevel;
     }
@@ -62,12 +70,21 @@ public class Enemy {
         validateNonNegative(attack);
         this.eattack = attack;
     }
+
+      public void setSpeed(int speed) {
+        validateNonNegative(speed);
+        this.espeed = speed;
+    }
     public void setHealth(int health) {
         if(health <= 0){
             this.ehealth = 0;
             eisAlive = false;
+        } else {
+
+            this.ehealth = health;
+            eisAlive = true;
         }
-        this.ehealth = health;
+    
     }
     public void setHeight(double height) {
         if(height < 0) {
@@ -120,6 +137,7 @@ public String toString() {
             + "|✅STATUS:    " + (eisAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
             + "|📏HEIGHT:    " + eheight + "m\t\t\t|\n"
             + "|🔪ATTACK:    " + eattack + "\t\t\t|\n"
+            + "|💨SPEED:     " + espeed  + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
 

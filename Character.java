@@ -8,10 +8,12 @@ public class Character {
     private int level;
     private String type;
     private int attack;
+    private int speed;
+
 
     // Constructor
     public Character(String name, int health,
-            double height, int level, String type, int attack) {
+            double height, int level, String type, int attack, int speed) {
         setName(name);
         setHealth(health);
         this.isAlive = true;
@@ -19,6 +21,7 @@ public class Character {
         setLevel(level);
         setType(type);
         setAttack(attack);
+        setSpeed(speed);
     }
 
     //mutators and accessors
@@ -33,6 +36,10 @@ public class Character {
     }
     public int getLevel() {
         return level;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
     public String getName() {
         return name;
@@ -60,12 +67,19 @@ public class Character {
         validateNonNegative(attack);
         this.attack = attack;
     }
+
+        public void setSpeed(int speed) {
+        validateNonNegative(speed);
+        this.speed = speed;
+    }
     public void setHealth(int health) {
         if(health <= 0){
             this.health = 0;
             isAlive = false;
-        }
+        } else{
         this.health = health;
+        isAlive = true;
+        }
     }
     public void setHeight(double height) {
         if(height < 0) {
@@ -113,6 +127,7 @@ public String toString() {
             + "|✅STATUS:    " + (isAlive ? "ALIVE\t\t\t|" : "DEFEATED\t\t\t|") + "\n"
             + "|📏HEIGHT:    " + height + "m\t\t\t|\n"
             + "|🔪ATTACK:    " + attack + "\t\t\t|\n"
+            + "|💨SPEED:     " + speed  + "\t\t\t|\n"
             + "+---------------------------------------+\n";
     }
 
