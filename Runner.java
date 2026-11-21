@@ -8,7 +8,6 @@ public class Runner {
             "Defender",
             20,
             (int)(Math.random() * 100)//randomly generating an integer from 0-99
-        
             
         );
 

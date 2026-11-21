@@ -8,6 +8,7 @@ public class Enemy {
     private int eattack;
     private boolean eisLegendary;
     private int espeed;
+    
  // Constructor
     public Enemy(String name, int health,
             double height, int level, String type, int attack, boolean isLegendary, int speed) {
